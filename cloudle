@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TVG4FZQ");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="canonical" href="cloudle" />
+
+    <!-- Libs CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/css/libs.bundle.css"
+    />
+
+    <!-- Theme CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/css/theme.bundle.css"
+    />
+
+    <link rel="stylesheet" href="stylesheets/style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Title -->
+    <title>Cloudle | Cogit</title>
+
+    <script>
+      var userStatus = "logged-out";
+      var puzzleDayId = "2022-05-02";
+      var secondsToNextPuzzle = 46027;
+    </script>
+
+    <link rel="stylesheet" href="stylesheets/cloudle.css" />
+
+    <script>
+      var game = {
+        city: "Nuku`alofa",
+        country: "Tonga",
+        lat: "-21.1347",
+        lng: "-175.2083",
+        forecast_enc: "116804760873610602",
+        gameId: 399,
+        gameDate: "2022-05-02",
+      };
+    </script>
+    <script src="js/cloudle.js"></script>
+
+    <script>
+      $(function () {
+        $(".copy-score").click(function () {
+          console.log("clicked");
+          $("#sharing-text").select();
+          document.execCommand("copy");
+          //$('input#sharing-link').blur(); // todo P2: findout why this isn't working
+
+          $(".copy-score").text("Copied!");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TVG4FZQ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- NAVIGATION -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-vibrant fixed-top-x"
+      id="topnav"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler me-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand logo me-auto" href="https://cogit.fun/">
+          <img
+            src="assets/img/cloud.png"
+            alt="Cogit Logo"
+            class="navbar-brand-img"
+            style="max-height: 2.2rem"
+          /><!--todo p2: get this back into the CSS -->
+
+          <span class="mx-2"> CLOUDLE</span>
+          <!-- todo p2: improve font; todo p2: switch this out for other game names if appropriate. eg: "Cloudle by Cogit" -->
+          <!-- <span class="badge bg-secondary" style="transform: rotate(15deg);">BETA!</span></a> -->
+        </a>
+
+        <!-- Collapse -->
+        <div
+          class="collapse navbar-collapse me-lg-auto order-lg-first"
+          id="navbar"
+        >
+          <!-- Navigation -->
+          <ul class="navbar-nav ms-lg-auto-x">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="topnavPlay"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+              >
+                Play
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="topnavPlay">
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/play">
+                    <strong>Today's game</strong>
+                    <span class="badge rounded-pill bg-info">Play Now!</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/answers">
+                    Yesterday's Solutions
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/archive">
+                    Archive
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/leaderboard">
+                    Leaderboard
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="topnavPlay"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+              >
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="topnavPlay">
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/sign-up">
+                    Sign Up
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/sign-in">
+                    Sign In
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="topnavPlay"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+              >
+                Free Archive Games
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="topnavPlay">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-03"
+                    >Monday (Easy)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-04"
+                    >Tuesday (Fun)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-05"
+                    >Wednesday (Moderate)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-06"
+                    >Thursday (Hard)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-07"
+                    >Friday (Challenging)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-01"
+                    >Saturday (Fiendish)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://cogit.fun/play/2022-01-02"
+                    >Sunday (Wildcard)</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="topnavPlay"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+              >
+                Game Lab
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="topnavPlay">
+                <li>
+                  <a class="dropdown-item" href="https://cogit.fun/cloudle"
+                    >Cloudle</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- / .container -->
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <!-- HEADER -->
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col col-lg-9">
+            <!-- CARDS -->
+            <div class="card mt-4">
+              <div class="card-body">
+                <h2 class="text-center">Nuku&#x60;alofa, Tonga</h2>
+                <div id="grid">
+                  <div class="calendar-row">
+                    <div class="day-box">Mon 5/2</div>
+                    <div class="day-box">Tue 5/3</div>
+                    <div class="day-box">Wed 5/4</div>
+                    <div class="day-box">Thu 5/5</div>
+                    <div class="day-box">Fri 5/6</div>
+                  </div>
+                  <div class="guess-row active-row">
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                  </div>
+                  <div class="guess-row">
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                  </div>
+                  <div class="guess-row">
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                  </div>
+                  <div class="guess-row">
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                  </div>
+                  <div class="guess-row">
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                  </div>
+                  <div class="guess-row">
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                    <div class="guess weather ready"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div id="options">
+                  <div class="weather" data-type="01d"></div>
+                  <div class="weather" data-type="02d"></div>
+                  <div class="weather" data-type="03d"></div>
+                  <div class="weather" data-type="04d"></div>
+                  <div class="weather" data-type="09d"></div>
+                  <div class="weather" data-type="10d"></div>
+                  <div class="weather" data-type="11d"></div>
+                  <div class="weather" data-type="13d"></div>
+                  <div class="weather" data-type="50d"></div>
+                </div>
+              </div>
+
+              <div id="controls" class="mb-4">
+                <button
+                  type="button"
+                  class="btn btn-secondary mr-4"
+                  id="delete"
+                >
+                  Delete
+                </button>
+                <button type="button" class="btn btn-primary" id="enter">
+                  Enter
+                </button>
+              </div>
+
+              <div id="extra-controls" class="text-center mb-4">
+                <span data-bs-toggle="modal" data-bs-target="#icons-modal"
+                  >What do the icons mean?</span
+                >
+                &bullet;
+                <span class="high-contrast-toggle"
+                  >Toggle high-contrast mode</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- / col -->
+        </div>
+        <!-- / row -->
+      </div>
+      <!-- / container -->
+    </div>
+    <!-- / .main-content -->
+
+    <!-- MODALS -->
+
+    <div class="modal" id="rules-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Cloudle
+              <br />Monday, May 2<span class="ordinal">th</span> 2022
+            </h5>
+            <button
+              data-action="resume-game"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4>Rules:</h4>
+            <div>Look, it's Wordle, but for the weather.</div>
+            <br />
+            <div>
+              There's a new city every day. You have to guess the 5-day forecast
+              for that city.
+            </div>
+            <br />
+            <div>You know how the game works.</div>
+            <br />
+          </div>
+          <div class="modal-footer">
+            <button
+              id="lets-play"
+              data-action="resume-game"
+              class="btn btn-primary"
+              type="button"
+              data-bs-dismiss="modal"
+              disabled
+            >
+              <span
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Loading...
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="icons-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cloudle - Weather Icons</h5>
+            <button
+              data-action="resume-game"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="icon-explainer">
+              <div class="weather" data-type="01d"></div>
+              <div class="name">Clear</div>
+              <div class="description">Skies are clear</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="02d"></div>
+              <div class="name">Few Clouds</div>
+              <div class="description">Clouds cover 0-25% of the sky</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="03d"></div>
+              <div class="name">Scattered Clouds</div>
+              <div class="description">Clouds cover 25-50% of the sky</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="04d"></div>
+              <div class="name">Broken Clouds / Overcast</div>
+              <div class="description">Clouds cover 50-100% of the sky</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="09d"></div>
+              <div class="name">Drizzle / Shower</div>
+              <div class="description">Light drizzle, or a rain shower</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="10d"></div>
+              <div class="name">Rain</div>
+              <div class="description">Light, medium, or heavy rain</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="11d"></div>
+              <div class="name">Thunderstorm</div>
+              <div class="description">Thunderstorm, with or without rain</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="13d"></div>
+              <div class="name">Snow</div>
+              <div class="description">Freezing rain, snow, or sleet</div>
+            </div>
+
+            <div class="icon-explainer">
+              <div class="weather" data-type="50d"></div>
+              <div class="name">Mist</div>
+              <div class="description">
+                Mist, smoke, haze, dust, fog, sand, ash, or tornado
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="lets-play"
+              data-action="resume-game"
+              class="btn btn-primary"
+              type="button"
+              data-bs-dismiss="modal"
+              disabled
+            >
+              <span
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Loading...
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="complete-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cloudle</h5>
+            <button
+              data-action="resume-game"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <h2></h2>
+            <div id="outcome-message"></div>
+            <div>
+              <button class="btn btn-success mt-6 share-score">
+                <span class="fe fe-share-2"></span> Share your score
+              </button>
+              <textarea
+                id="sharing-text"
+                style="left: 100000px; position: fixed"
+              ></textarea>
+              <button class="btn btn-success mt-6 copy-score">
+                <span class="fe fe-clipboard"></span> Copy your score
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <!-- Vendor JS -->
+    <script src="assets/js/vendor.bundle.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.bundle.js"></script>
+  </body>
+</html>

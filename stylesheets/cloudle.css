@@ -91,15 +91,15 @@ body.high-contrast .weather[data-outcome="close"]{background-color: rgb(133, 192
     transition: background-color 600ms linear;
 }
 
-.weather[data-type="01d"]{background-image: url('/images/weather/01d.png');}
-.weather[data-type="02d"]{background-image: url('/images/weather/02d.png');}
-.weather[data-type="03d"]{background-image: url('/images/weather/03d.png');}
-.weather[data-type="04d"]{background-image: url('/images/weather/04d.png');}
-.weather[data-type="09d"]{background-image: url('/images/weather/09d.png');}
-.weather[data-type="10d"]{background-image: url('/images/weather/10d.png');}
-.weather[data-type="11d"]{background-image: url('/images/weather/11d.png');}
-.weather[data-type="13d"]{background-image: url('/images/weather/13d.png');}
-.weather[data-type="50d"]{background-image: url('/images/weather/50d.png');}
+.weather[data-type="01d"]{background-image: url('../images/weather/01d.png');}
+.weather[data-type="02d"]{background-image: url('../images/weather/02d.png');}
+.weather[data-type="03d"]{background-image: url('../images/weather/03d.png');}
+.weather[data-type="04d"]{background-image: url('../images/weather/04d.png');}
+.weather[data-type="09d"]{background-image: url('../images/weather/09d.png');}
+.weather[data-type="10d"]{background-image: url('../images/weather/10d.png');}
+.weather[data-type="11d"]{background-image: url('../images/weather/11d.png');}
+.weather[data-type="13d"]{background-image: url('../images/weather/13d.png');}
+.weather[data-type="50d"]{background-image: url('../images/weather/50d.png');}
 
 #options .weather{
     transition: background-color 0ms linear;
